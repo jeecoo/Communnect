@@ -10,4 +10,7 @@
     <string name="firstname">Firstname</string>
     <string name="lastname">Lastname</string>
     <string name="sign_up">Sign Up</string>
+    <string name="sign_in_account">sign in account</string>
+    <string name="sign_in">Sign in</string>
+    <string name="loginRedirect">Already have an account? Login</string>
 </resources>

@@ -7,20 +7,26 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText mEmailEt, mPasswordEt;
+    EditText mEmailEt, mPasswordEt, mFirstNameEt, mLastNameEt;
     Button mRegisterBtn;
-
-    ProgressDialog progressDialog;
-    FirebaseAuth mAuth;
+    TextView mloginRedirectText;
+    FirebaseDatabase database;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +39,14 @@ public class RegisterActivity extends AppCompatActivity {
             actionBar.setTitle("Create Account");
         }
 
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-
         // Initialize Views
         mEmailEt = findViewById(R.id.emailET);
         mPasswordEt = findViewById(R.id.passwordET);
+        mFirstNameEt = findViewById(R.id.firstnameET); // Initialize mFirstNameEt
+        mLastNameEt = findViewById(R.id.lastnameET);   // Initialize mLastNameEt
         mRegisterBtn = findViewById(R.id.registerBtn);
+        mloginRedirectText = findViewById(R.id.loginRedirectText);
 
-        progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Registering User...");
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,11 +54,24 @@ public class RegisterActivity extends AppCompatActivity {
                 registerUser();
             }
         });
+
+        mloginRedirectText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void registerUser() {
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("users");
+
         String email = mEmailEt.getText().toString().trim();
         String password = mPasswordEt.getText().toString().trim();
+        String firstName = mFirstNameEt.getText().toString().trim();
+        String lastName = mLastNameEt.getText().toString().trim();
 
         if (email.isEmpty()) {
             mEmailEt.setError("Email is required");
@@ -80,18 +97,25 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
-        progressDialog.show();
+        if (firstName.isEmpty()) {
+            mFirstNameEt.setError("First name is required");
+            mFirstNameEt.requestFocus();
+            return;
+        }
 
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(task -> {
-                    progressDialog.dismiss();
-                    if (task.isSuccessful()) {
-                        Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                        finish();
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "Registration failed. " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+        if (lastName.isEmpty()) {
+            mLastNameEt.setError("Last name is required");
+            mLastNameEt.requestFocus();
+            return;
+        }
+
+        HelperClass helperClass = new HelperClass(firstName, lastName,email, password);
+        reference.child(firstName).setValue(helperClass);
+
+        Toast.makeText(RegisterActivity.this, "You have signup successfully!", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        startActivity(intent);
+
     }
+
 }
