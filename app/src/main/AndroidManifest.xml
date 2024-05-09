@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Communnect"
         tools:targetApi="31">
         <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
@@ -28,10 +31,10 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"

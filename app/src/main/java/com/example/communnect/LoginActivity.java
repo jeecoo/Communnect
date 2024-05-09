@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                             String lastnameFromDB = userSnapshot.child("lastname").getValue(String.class);
 
                             // Proceed with login
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                             intent.putExtra("name", nameFromDB);
                             intent.putExtra("email", emailFromDB);
                             intent.putExtra("lastname", lastnameFromDB);
