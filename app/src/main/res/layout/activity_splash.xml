@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/colorgradient1"
+    android:padding="20dp">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/communect_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="180dp"
+            android:padding="30dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/communnect_logo" />
+
+        <TextView
+            android:id="@+id/communect_text"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/communect_logo"
+            android:contextClickable="false"
+            android:elegantTextHeight="false"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="@string/communnect"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+
+        <ProgressBar
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="20dp"
+            android:indeterminateTint="#FFFFFF">
+
+        </ProgressBar>
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Communnect</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="communnect">communnect</string>
+    <string name="tagline">Connecting Communities, Serving You Better</string>
+    <string name="create_account">Create Account</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+</resources>
