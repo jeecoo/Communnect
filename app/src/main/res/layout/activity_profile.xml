@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="413dp"
+            android:layout_height="208dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/profileellipse"
+            />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="58dp"
+            android:fontFamily="@font/montserrat"
+            android:text="SetText From database"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/montserrat"
+            android:text="Member Since:"
+            android:textColor="#B9EDBE"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/montserrat"
+            android:text="DatefromDatabase"
+            android:textColor="#B9EDBE"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="120dp"
+            android:backgroundTint="#F9FFFC"
+            android:fontFamily="@font/montserrat"
+            android:text="Edit your profile"
+            android:textAlignment="center"
+            android:textColor="#2C2C2C"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEdit">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageviewIssuance"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_issuance" />
+
+                    <TextView
+                        android:id="@+id/textViewIssuance"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="Issuances" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:layout_marginBottom="50px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageHistory"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_issuance"
+                        tools:srcCompat="@drawable/vector_history" />
+
+                    <TextView
+                        android:id="@+id/textViewHistory"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="History" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/divider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/divide" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:layout_marginTop="50px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageViewLanguage"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_issuance"
+                        tools:srcCompat="@drawable/vector_world" />
+
+                    <TextView
+                        android:id="@+id/textViewLang"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="Language" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageviewLocation"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_address" />
+
+                    <TextView
+                        android:id="@+id/textViewLocation"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="Location" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageViewDisplay"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_issuance"
+                        tools:srcCompat="@drawable/vector_display" />
+
+                    <TextView
+                        android:id="@+id/textViewDisplay"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="Display" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageviewFeeed"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_issuance"
+                        tools:srcCompat="@drawable/vector_feed" />
+
+                    <TextView
+                        android:id="@+id/textViewFeed"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="Feed Preferences" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:layout_marginBottom="50px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageViewSubscription"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_issuance" />
+
+                    <TextView
+                        android:id="@+id/textViewSubs"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="Subscription" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/divider2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/divide" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:layout_marginTop="50px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageViewClear"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_issuance"
+                        tools:srcCompat="@drawable/vector_trash" />
+
+                    <TextView
+                        android:id="@+id/textViewTrash"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="Clear Cache" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageViewLog"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:scaleType="center"
+                        android:src="@drawable/vector_issuance"
+                        tools:srcCompat="@drawable/vector_logout" />
+
+                    <TextView
+                        android:id="@+id/textViewLog"
+                        android:layout_width="300px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:text="LogOut" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/vector_greater_than" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="110sp"
+            android:layout_height="110sp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:srcCompat="@drawable/profilepic" />
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
